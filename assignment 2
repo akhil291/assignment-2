@@ -1,0 +1,239 @@
+"Q1"
+n=int(input("Enter a number"))
+for i in range(1,n+1):
+    print(i,end=" ")
+print()
+for i in range(n,0,-1):
+    print(i,end=" ")
+
+"Q2"
+for i in range(1,101):
+    if i%2==0:
+        print(i,end=" ")
+    else:
+        print()
+        print(i,end="  ")
+        
+"Q3"
+n=int(input("Enter a number:"))
+count=0
+for i in range(1,n+1):
+    if(n%i==0):
+        count=count+1
+if(count>2):
+    print(n," Not prime")
+else:
+    print(n," is prime")
+
+"Q4"
+n=int(input("Enter a number:"))
+sum=0
+for i in range(1,n):
+    if i%3==0 or i%5==0:
+        print(i,end=" ")
+        sum=sum+i
+print()
+print("sum =",sum)
+
+"Q5"
+def fact(number):
+    factorial = 1
+    while(number != 1):
+        factorial = factorial*number
+        number -=1
+    return factorial
+def calculate(num, choice):
+    if choice == "sum":
+        print(f"Sum(1+2+3+....+{num}) = {sum(range(1,n+1))}")
+    else:
+        print(f"Product(1.2.3...{num}) = {fact(num)}")
+
+
+n = int(input("Enter a number:"))
+choice = input(f"Enter sum(1+2+3+....+{n}) or product(1.2.3...{n}) : sum/product:")
+calculate(n, choice)
+
+"Q6"
+
+s = 0
+for i in range(1,1001):
+    if i%3 == 0 or i%5 == 0:
+        s+=i
+print("sum =",s)
+
+"Q7"
+for i in range(2000,3201):
+    if i%7==0 and i%5!=0:
+        print(i,end=" ")
+        
+"Q8"
+sumOfSqure=0
+sum=0
+for i in range(1,101):
+    sumOfSqure=sumOfSqure+(i**2)
+    sum=sum+i
+diff=(sum**2)-sumOfSqure  
+print("square of the sum - sum of the squares  = ",diff)
+
+"Q9"
+num=int(input("Enter a number:"))
+factorial = 1
+if num < 0:
+    print("factorial does not exist for negative numbers")
+elif num == 0:
+    print("The factorial of 0 is 1")
+else:
+    for i in range(1,num + 1):
+        factorial = factorial*i
+    print("The factorial of",num,"is",factorial)
+    
+"Q10"
+for i in range(1,6):
+    print(f"{i}"*i,"\n")
+
+n = int(input("Enter a number:"))
+for i in range(n):
+    for j in range(n):
+        print(max(i+1, j+1, n-i, n-j), end = "")
+    print()
+    
+ for i in range(1,6):
+    print("*"*i,"\n")
+
+for i in range(4,0,-1):
+    print("*"*i,"\n")
+
+for _ in range(5):
+    print("#####")
+    
+    "Q11"
+digit=int(input("Enter digit:"))
+n=input("enter a number:")
+result=0
+for i in range(1,digit+1):
+    result= result + int(str(n*i))
+    
+print(result)
+
+
+"Q12"
+s = input("Enter the string: ")
+
+size = 0
+
+for i in s:
+    size +=1
+
+print(f"Length of string '{s}' is:", size)
+
+"Q13"
+string = input("Enter the string: ")
+
+intCount = 0
+letterCount = 0
+
+for i in string:
+    if (i.isdigit()):
+        intCount += 1
+    elif (i.isalpha()):
+        letterCount += 1
+
+print(f"Number of letters is {letterCount} and number of digits is {intCount}")
+
+"Q14"
+string = input("Enter the string: ")
+str = ""
+
+for i in string:
+    if (i >= "a" and i <= "z"):
+        x = ord(i)
+        x -= 32
+        str += chr(x)
+    else:
+        str += i
+
+print(str)
+
+"Q15"
+s = input("Enter the sentence: ")
+
+upper = 0
+lower = 0
+
+for i in s:
+    if (i.isupper()):
+        upper += 1
+    elif (i.islower()):
+        lower += 1
+        
+print(f"The number of upper case letters is '{upper}' and lower case letters is '{lower}'")
+
+
+"Q16"
+s = input("Enter the string: ")
+ch = input("Enter the character to check its occurences: ")
+
+def count(s, ch):
+    chCount = 0
+    for i in s:
+        if (i == ch):
+            chCount += 1
+    return chCount
+
+print(f"Count of '{ch}' =", count(s, ch))
+
+"Q17"
+string = input("Enter the string: ")
+
+if (string == string[::-1]):
+    print(f"'{string}' is a palindrome")
+else:
+    print(f"'{string}' is not a palindrome")
+    
+"q18"
+s1 = input("Enter the string: ")
+s2 = input("Enter the substring: ")
+
+def check(s1, s2)    :
+    if s2 in s1:
+        return True
+    else:
+        return False
+    
+print(f"Is '{s2}' a substring of '{s1}'? :", check(s1, s2))
+
+
+"Q19"
+pwd = input("Enter password: ")
+
+def valid(pwd):
+    count_a = 0
+    count_1 = 0
+    count = 0
+    for i in pwd:
+        if (i >= 'a' and i <= 'z'):
+            count_a += 1
+        elif (i >= '0' and i <= '9'):
+            count_1 += 1
+        elif ((i >= '#' and i <= '&') or i == "@"):
+            count += 1
+    
+    if (count_a >= 1 and count_1 >= 1 and count >=1):
+        print("Valid password")
+    else:
+        print("Invalid password. Please enter again")
+
+valid(pwd)
+
+
+"Q20"
+vowel=['a','e','i','o','u']
+found=[]
+st=input("Enter String ")
+string=st.lower()
+for letter in string:
+    if letter in vowel:
+        if letter not in found:
+            found.append(letter)
+for vowel in found:
+    print(vowel)
